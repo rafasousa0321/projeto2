@@ -1,12 +1,10 @@
 @extends('layout')
-<ul>
 @foreach($generos as $genero)
 <li>
-{{$genero->idg}}
-{{$genero->designacao}}
-{{$genero->observacoes}}
+    <a href="{{route('generos.show', ['id'=>$genero->idg])}}">
+        {{$genero->designacao}}
+    </a>
 </li>
 @endforeach
-</ul>
 @section('conteudo')
 @endsection

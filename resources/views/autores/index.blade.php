@@ -1,12 +1,10 @@
 @extends('layout')
-<ul>
 @foreach($autores as $autor)
 <li>
-{{$autor->ida}}
-{{$autor->nome}}
-{{$autor->nacionalidade}}
+    <a href="{{route('autores.show', ['id'=>$autor->ida])}}">
+        {{$autor->nome}}
+    </a>
 </li>
 @endforeach
-</ul>
 @section('conteudo')
 @endsection
