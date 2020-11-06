@@ -23,4 +23,7 @@ Sinopse: {{$livro->sinopse}}<br>
         Sem autor definido
     </div>
 @endif
+@foreach($livro->editoras as $editora)
+    {{$editora->nome}}<br>
+@endforeach
 @endsection
