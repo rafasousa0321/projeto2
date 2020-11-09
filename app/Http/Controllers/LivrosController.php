@@ -22,4 +22,10 @@ class LivrosController extends Controller
             'livro'=>$livro
         ]);
     }
+
+    public function enviado(Request $request){
+        $nome = $request -> pesquisar;
+        $livros = Livro::where('titulo', 'like', '%' . $nome . '%')->get();
+        return view('livros.enviado', ['livros' => $livros]);
+    }
 }

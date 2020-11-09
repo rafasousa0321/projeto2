@@ -8,11 +8,11 @@
 @endforeach
 <br>
 {{$livros->render()}}
-@section('conteudo')
-@endsection 
 
 <h5>Pesquisar Livros</h5>
-<form method="POST" action="enviado">
-    Pesquisar:<input type="text" name="pesquisar">
-    <input type="submit" value="Enviar">
+<form method="POST" action="{{route('enviado')}}">
+    @csrf
+    <label for="nome">Pesquisar: </label>
+    <input type="text" name="pesquisar">
+    <button type="submit"> Enviar</button>
 </form>
